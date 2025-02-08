@@ -128,13 +128,6 @@ function DollarConverter() {
     currentRate && setUsdAmount((Number(value) / currentRate).toFixed(2))
   }
 
-  const toggleRateMode = () => {
-    setRateMode(prev => {
-      if (prev === "bcv") return "paralelo"
-      if (prev === "paralelo") return "promedio"
-      return "bcv"
-    })
-  }
 
   useEffect(() => {
     if (currentRate) {
