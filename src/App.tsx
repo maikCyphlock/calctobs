@@ -89,7 +89,7 @@ const ColorBackground = () => {
 function DollarConverter() {
   const { isPending, error, data } = useQuery({
     queryKey: ["dollarData"],
-    queryFn: () => fetch("http://127.0.0.1:8787/v1/all").then((res) => res.json()),
+    queryFn: () => fetch("https://dollar-api-2025.maikolaguilar656.workers.dev/v1/all").then((res) => res.json()),
     refetchInterval: 60000,
   })
 
