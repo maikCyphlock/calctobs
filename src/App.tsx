@@ -27,65 +27,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
-const ColorBackground = () => {
-  return (
-    <div className="fixed -top-92 inset-0 -z-0 overflow-hidden">
-      <div className="relative h-full w-full">
-        {/* Base Amber */}
-        <motion.div
-          className="absolute h-[500px] w-[500px] rounded-full bg-amber-500/30 blur-[64px]"
-          animate={{
-            x: [-100, 200, -50, 150, -100],
-            y: [0, 150, 200, 50, 0],
-            scale: [1, 1.2, 0.8, 1.1, 1]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-        />
-
-        {/* Purple */}
-        <motion.div
-          className="absolute h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[64px]"
-          animate={{
-            x: [200, -50, 100, -150, 200],
-            y: [150, 50, 200, 100, 150],
-            scale: [0.8, 1.1, 0.9, 1.2, 0.8]
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-        />
-
-        {/* Pink */}
-        <motion.div
-          className="absolute h-[500px] w-[500px] rounded-full bg-pink-500/30 blur-[64px]"
-          animate={{
-            x: [-150, 100, 200, -50, -150],
-            y: [200, 100, 50, 150, 200],
-            scale: [1.1, 0.8, 1.2, 0.9, 1.1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "linear"
-          }}
-        />
-
-        {/* Capa de mezcla */}
-        <div className="absolute -top-64 bg-amber-50/50 mix-blend-multiply" />
-      </div>
-    </div>
-  );
-};
-
 function DollarConverter() {
   const { isPending, error, data } = useQuery({
     queryKey: ["dollarData"],
@@ -158,8 +99,8 @@ function DollarConverter() {
     variants={containerVariants}
     className="w-full max-w-xl bg-zinc-800 bg-opacity-70 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden"
   >
-    <ColorBackground/>
-    <div className="p-8 bg-zinc-900">
+
+    <div className="p-8 bg-zinc-800">
       <motion.h1
         className="relative text-2xl md:text-4xl lg:text-6xl z-10 font-bold text-center text-white mb-8"
         variants={itemVariants}
