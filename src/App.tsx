@@ -59,14 +59,18 @@ function DollarConverter() {
     const value = event.target.value
     if (isNaN(Number(value))) return
     setUsdAmount(value)
-    currentRate && setVesAmount((Number(value) * currentRate).toFixed(2))
+    if (currentRate) {
+      setVesAmount((Number(value) * currentRate).toFixed(2))
+    }
   }
 
   const handleVesChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
     if (isNaN(Number(value))) return
     setVesAmount(value)
-    currentRate && setUsdAmount((Number(value) / currentRate).toFixed(2))
+    if (currentRate) {
+      setUsdAmount((Number(value) / currentRate).toFixed(2))
+    }
   }
 
 
